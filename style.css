@@ -581,6 +581,68 @@ body.light .edu-degree { color: #111; }
 .cert-card span { font-size: .88rem; font-weight: 600; color: var(--text); flex: 1; }
 .cert-card small { font-size: .75rem; color: var(--muted); }
 
+/* ══ CERTIFICATES GALLERY ══ */
+.cert-gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.cert-img-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-card);
+  overflow: hidden;
+  height: 220px;
+  width: calc(33.333% - 16px);
+  min-width: 280px;
+  transition: transform .4s cubic-bezier(.23,1,.32,1), box-shadow .4s, border-color .4s;
+  cursor: pointer;
+}
+.cert-img-actual {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  opacity: 0.8;
+  transition: opacity .4s, transform .6s cubic-bezier(.23,1,.32,1);
+}
+.cert-img-card:hover {
+  border-color: var(--border-light);
+}
+.cert-img-card:hover .cert-img-actual {
+  opacity: 1;
+  transform: scale(1.05);
+}
+.cert-img-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 40px 24px 20px;
+  background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.95) 100%);
+  transform: translateY(16px);
+  opacity: 0;
+  transition: transform .3s, opacity .3s;
+  pointer-events: none;
+}
+.cert-img-card:hover .cert-img-overlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+.cert-img-overlay h4 {
+  font-family: var(--font-tight);
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+.cert-img-overlay span {
+  font-size: .8rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
 /* ══ CONTACT ══ */
 .contact-section { text-align: center; }
 .contact-inner { max-width: 800px; margin: 0 auto; padding: 0 28px; position: relative; }

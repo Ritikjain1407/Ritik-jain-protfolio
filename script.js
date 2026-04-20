@@ -101,6 +101,7 @@ function addTilt(selector, intensity = 8) {
 addTilt('.proj-card', 6);
 addTilt('.contact-card', 8);
 addTilt('.cert-card', 5);
+addTilt('.cert-img-card', 6);
 
 /* ── 3D white about cards reset on hover ── */
 document.querySelectorAll('.card-3d').forEach(card => {
